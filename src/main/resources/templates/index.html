@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<head th:replace="fragments/header :: head">
+</head>
+<body>
+
+<div class="container">
+
+    <div th:each="question : ${allQuestions}">
+        <div class="question" th:text="${question.questionText}"></div>
+
+
+        <div class="word-images">
+
+            <div class="row images-row">
+                <div class="answer-option" th:each="option : ${question.answerOptions}">
+                    <img th:src="${option.imagePath}">
+                    <div class="answer-text" th:text="${option.wordFrench}">
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+</div>
+
+</body>
+</html>
